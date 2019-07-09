@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+ <style>
+
+  #chessboard_blank {
+   position: absolute;
+   display: block;
+   width: 500px;
+   height: 500px;
+   top: 15%;
+   left: 30%;
+}
+
+  #white_pawn_a {position: absolute;width: 40px;height: 40px;}
+  #white_pawn_b {position: absolute;width: 40px;height: 40px;}
+  #white_pawn_c {position: absolute;width: 40px;height: 40px;}
+  #white_pawn_d {position: absolute;width: 40px;height: 40px;}
+  #white_pawn_e {position: absolute;width: 40px;height: 40px;}
+  #white_pawn_f {position: absolute;width: 40px;height: 40px;}
+  #white_pawn_g {position: absolute;width: 40px;height: 40px;}
+  #white_pawn_h {position: absolute;width: 40px;height: 40px;}
+
+  #white_rook_a {position: absolute;width: 40px;height: 40px;}
+  #white_knight_b {position: absolute;width: 40px;height: 40px;}
+  #white_bishop_c {position: absolute;width: 40px;height: 40px;}
+  #white_queen {position: absolute;width: 40px;height: 40px;}
+  #white_king {position: absolute;width: 40px;height: 40px;}
+  #white_bishop_f {position: absolute;width: 40px;height: 40px;}
+  #white_knight_g {position: absolute;width: 40px;height: 40px;}
+  #white_rook_h {position: absolute;width: 40px;height: 40px;}
+
+  #black_pawn_a {position: absolute;width: 40px;height: 40px;}
+  #black_pawn_b {position: absolute;width: 40px;height: 40px;}
+  #black_pawn_c {position: absolute;width: 40px;height: 40px;}
+  #black_pawn_d {position: absolute;width: 40px;height: 40px;}
+  #black_pawn_e {position: absolute;width: 40px;height: 40px;}
+  #black_pawn_f {position: absolute;width: 40px;height: 40px;}
+  #black_pawn_g {position: absolute;width: 40px;height: 40px;}
+  #black_pawn_h {position: absolute;width: 40px;height: 40px;}
+
+  #black_rook_a {position: absolute;width: 40px;height: 40px;}
+  #black_knight_b {position: absolute;width: 40px;height: 40px;}
+  #black_bishop_c {position: absolute;width: 40px;height: 40px;}
+  #black_queen {position: absolute;width: 40px;height: 40px;}
+  #black_king {position: absolute;width: 40px;height: 40px;}
+  #black_bishop_f {position: absolute;width: 40px;height: 40px;}
+  #black_knight_g {position: absolute;width: 40px;height: 40px;}
+  #black_rook_h {position: absolute;width: 40px;height: 40px;}
+
+ </style>
+
+ <script>
+   
+     function cordTester() {
+   console.log(IT WORKS!!!!)
+   document.getElementById("white_pawn_a").style.top = document.getElementById("ycordTester").value + "px"
+   document.getElementById("white_pawn_a").style.left = document.getElementById("xcordTester").value + "px"
+}
+
+  var whitePawnA = {xcord:452, ycord:462, state:"alive"}
+  var whitePawnB = {xcord:507, ycord:462, state:"alive"}
+  var whitePawnC = {xcord:562, ycord:462, state:"alive"}
+  var whitePawnD = {xcord:617, ycord:462, state:"alive"}
+  var whitePawnE = {xcord:672, ycord:462, state:"alive"}
+  var whitePawnF = {xcord:727, ycord:462, state:"alive"}
+  var whitePawnG = {xcord:782, ycord:462, state:"alive"}
+  var whitePawnH = {xcord:837, ycord:462, state:"alive"}
+  
+  var whiteRookA = {xcord:452, ycord:517, state:"alive"}
+  var whiteKnightB = {xcord:507, ycord:517, state:"alive"}
+  var whiteBishopC = {xcord:562, ycord:517, state:"alive"}
+  var whiteQueen = {xcord:617, ycord:517, state:"alive"}
+  var whiteKing = {xcord:672, ycord:517, state:"alive"}
+  var whiteBishopF = {xcord:727, ycord:517, state:"alive"}
+  var whiteKnightG = {xcord:582, ycord:517, state:"alive"}
+  var whiteRookH = {xcord:837, ycord:517, state:"alive"}
+
+  var blackPawnA = {xcord:452, ycord:187, state:"alive"}
+  var blackPawnB = {xcord:507, ycord:187, state:"alive"}
+  var blackPawnC = {xcord:562, ycord:187, state:"alive"}
+  var blackPawnD = {xcord:617, ycord:187, state:"alive"}
+  var blackPawnE = {xcord:672, ycord:187, state:"alive"}
+  var blackPawnF = {xcord:727, ycord:187, state:"alive"}
+  var blackPawnG = {xcord:782, ycord:187, state:"alive"}
+  var blackPawnH = {xcord:837, ycord:187, state:"alive"}
+  
+  var blackRookA = {xcord:452, ycord:132, state:"alive"}
+  var blackKnightB = {xcord:507, ycord:132, state:"alive"}
+  var blackBishopC = {xcord:562, ycord:132, state:"alive"}
+  var blackQueen = {xcord:617, ycord:132, state:"alive"}
+  var blackKing = {xcord:672, ycord:132, state:"alive"}
+  var blackBishopF = {xcord:727, ycord:132, state:"alive"}
+  var blackKnightG = {xcord:582, ycord:132, state:"alive"}
+  var blackRookH = {xcord:837, ycord:132, state:"alive"}
+
+  var A1 {xcord:452, ycord:517}
+  var A2 {xcord:452, ycord:462}
+  var A3 {xcord:452, ycord:407}
+  var A4 {xcord:452, ycord:352}
+  var A5 {xcord:452, ycord:297}
+  var A6 {xcord:452, ycord:242}
+  var A7 {xcord:452, ycord:187}
+  var A8 {xcord:452, ycord:132}
+
+  var B1 {xcord:507, ycord:517}
+  var B2 {xcord:507, ycord:462}
+  var B3 {xcord:507, ycord:407}
+  var B4 {xcord:507, ycord:352}
+  var B5 {xcord:507, ycord:297}
+  var B6 {xcord:507, ycord:242}
+  var B7 {xcord:507, ycord:187}
+  var B8 {xcord:507, ycord:132}
+
+  var C1 {xcord:562, ycord:517}
+  var C2 {xcord:562, ycord:462}
+  var C3 {xcord:562, ycord:407}
+  var C4 {xcord:562, ycord:352}
+  var C5 {xcord:562, ycord:297}
+  var C6 {xcord:562, ycord:242}
+  var C7 {xcord:562, ycord:187}
+  var C8 {xcord:562, ycord:132}
+
+  var D1 {xcord:617, ycord:517}
+  var D2 {xcord:617, ycord:462}
+  var D3 {xcord:617, ycord:407}
+  var D4 {xcord:617, ycord:352}
+  var D5 {xcord:617, ycord:297}
+  var D6 {xcord:617, ycord:242}
+  var D7 {xcord:617, ycord:187}
+  var D8 {xcord:617, ycord:132}
+
+  var E1 {xcord:672, ycord:517}
+  var E2 {xcord:672, ycord:462}
+  var E3 {xcord:672, ycord:407}
+  var E4 {xcord:672, ycord:353}
+  var E5 {xcord:672, ycord:297}
+  var E6 {xcord:672, ycord:242}
+  var E7 {xcord:672, ycord:187}
+  var E8 {xcord:672, ycord:132}
+
+  var F1 {xcord:727, ycord:517}
+  var F2 {xcord:727, ycord:462}
+  var F3 {xcord:727, ycord:407}
+  var F4 {xcord:727, ycord:352}
+  var F5 {xcord:727, ycord:297}
+  var F6 {xcord:727, ycord:242}
+  var F7 {xcord:727, ycord:187}
+  var F8 {xcord:727, ycord:132}
+
+  var G1 {xcord:782, ycord:517}
+  var G2 {xcord:782, ycord:462}
+  var G3 {xcord:782, ycord:407}
+  var G4 {xcord:782, ycord:352}
+  var G5 {xcord:782, ycord:297}
+  var G6 {xcord:782, ycord:242}
+  var G7 {xcord:782, ycord:187}
+  var G8 {xcord:782, ycord:132}
+
+  var H1 {xcord:837, ycord:517}
+  var H2 {xcord:837, ycord:462}
+  var H3 {xcord:837, ycord:407}
+  var H4 {xcord:837, ycord:352}
+  var H5 {xcord:837, ycord:297}
+  var H6 {xcord:837, ycord:242}
+  var H7 {xcord:837, ycord:187}
+  var H8 {xcord:837, ycord:132}
+
+  function moveOption() {
+   
+}
+
+ </script>
+
+</head>
+
+<body>
+
+ <img src="chessboard_blank.png" id="chessboard_blank">
+
+ <img src="white_pawn.png" id="white_pawn_a" style="top: 462px;left: 452px;display: block;" onclick="moveOption()">
+ <img src="white_pawn.png" id="white_pawn_b" style="top: 462px;left: 507px;display: block;">
+ <img src="white_pawn.png" id="white_pawn_c" style="top: 462px;left: 562px;display: block;">
+ <img src="white_pawn.png" id="white_pawn_d" style="top: 462px;left: 617px;display: block;">
+ <img src="white_pawn.png" id="white_pawn_e" style="top: 462px;left: 672px;display: block;">
+ <img src="white_pawn.png" id="white_pawn_f" style="top: 462px;left: 727px;display: block;">
+ <img src="white_pawn.png" id="white_pawn_g" style="top: 462px;left: 782px;display: block;">
+ <img src="white_pawn.png" id="white_pawn_h" style="top: 462px;left: 837px;display: block;"> 
+
+ <img src="white_rook.png" id="white_rook_a" style="top: 517px;left: 452px;display: block;">
+ <img src="white_knight.png" id="white_knight_b" style="top: 517px;left: 507px;display: block;">
+ <img src="white_bishop.png" id="white_bishop_c" style="top: 517px;left: 562px;display: block;">
+ <img src="white_queen.png" id="white_queen" style="top: 517px;left: 617px;display: block;">
+ <img src="white_king.png" id="white_king" style="top: 517px;left: 672px;display: block;">
+ <img src="white_bishop.png" id="white_bishop_f" style="top: 517px;left: 727px;display: block;">
+ <img src="white_knight.png" id="white_knight_g" style="top: 517px;left: 782px;display: block;">
+ <img src="white_rook.png" id="white_rook_h" style="top: 517px;left: 837px;display: block;">
+ 
+ <img src="black_pawn.png" id="black_pawn_a" style="top: 187px;left: 452px;display: block;">
+ <img src="black_pawn.png" id="black_pawn_b" style="top: 187px;left: 507px;display: block;">
+ <img src="black_pawn.png" id="black_pawn_c" style="top: 187px;left: 562px;display: block;">
+ <img src="black_pawn.png" id="black_pawn_d" style="top: 187px;left: 617px;display: block;">
+ <img src="black_pawn.png" id="black_pawn_e" style="top: 187px;left: 672px;display: block;">
+ <img src="black_pawn.png" id="black_pawn_f" style="top: 187px;left: 727px;display: block;">
+ <img src="black_pawn.png" id="black_pawn_g" style="top: 187px;left: 782px;display: block;">
+ <img src="black_pawn.png" id="black_pawn_h" style="top: 187px;left: 837px;display: block;">   
+
+ <img src="black_rook.png" id="black_rook_a" style="top: 132px;left: 452px;display: block;">
+ <img src="black_knight.png" id="black_knight_b" style="top: 132px;left: 507px;display: block;">
+ <img src="black_bishop.png" id="black_bishop_c" style="top: 132px;left: 562px;display: block;">
+ <img src="black_queen.png" id="black_queen" style="top: 132px;left: 617px;display: block;">
+ <img src="black_king.png" id="black_king" style="top: 132px;left: 672px;display: block;">
+ <img src="black_bishop.png" id="black_bishop_f" style="top: 132px;left: 727px;display: block;">
+ <img src="black_knight.png" id="black_knight_g" style="top: 132px;left: 782px;display: block;">
+ <img src="black_rook.png" id="black_rook_h" style="top: 132px;left: 837px;display: block;">
+
+ <img src="moveOption.png" id="a1" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="a2" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="a3" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="a4" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="a5" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="a6" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="a7" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="a8" style="top: 517px;left: 452px; display: block;">
+
+ <img src="moveOption.png" id="b1" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="b2" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="b3" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="b4" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="b5" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="b6" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="b7" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="b8" style="top: 517px;left: 452px; display: block;">
+
+ <img src="moveOption.png" id="c1" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="c2" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="c3" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="c4" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="c5" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="c6" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="c7" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="c8" style="top: 517px;left: 452px; display: block;">
+
+ <img src="moveOption.png" id="d1" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="d2" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="d3" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="d4" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="d5" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="d6" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="d7" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="d8" style="top: 517px;left: 452px; display: block;">
+
+ <img src="moveOption.png" id="e1" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="e2" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="e3" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="e4" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="e5" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="e6" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="e7" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="e8" style="top: 517px;left: 452px; display: block;">
+
+ <img src="moveOption.png" id="f1" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="f2" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="f3" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="f4" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="f5" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="f6" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="f7" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="f8" style="top: 517px;left: 452px; display: block;">
+
+ <img src="moveOption.png" id="g1" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="g2" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="g3" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="g4" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="g5" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="g6" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="g7" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="g8" style="top: 517px;left: 452px; display: block;">
+
+ <img src="moveOption.png" id="h1" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="h2" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="h3" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="h4" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="h5" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="h6" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="h7" style="top: 517px;left: 452px; display: block;">
+ <img src="moveOption.png" id="h8" style="top: 517px;left: 452px; display: block;">
+
+ <form>
+  <input type="text" id="xcordTester" value="xcord"></input><br>
+  <input type="text" id="ycordTester" value="ycord"></input><br>
+  <input type="button" onclick="cordTester()" value="submit"></input>
+ </form>
+
+</body>
+
+</html>
